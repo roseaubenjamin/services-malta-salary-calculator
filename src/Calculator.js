@@ -3,7 +3,7 @@ import './counter.css';
 import calculate from './calculate';
 import Tableaux from './Tableaux';
 import Charts from './Charts';
- 
+
 const { Component } = wp.element;
 
 class Calculator extends Component {
@@ -12,12 +12,12 @@ class Calculator extends Component {
         super(props);
 
         this.state = {
-            slary : 1000 , 
-            isAdult : false, 
-			isBornBefore : false, 
-			isStudent : false, 
+            slary : 1000 ,
+            isAdult : false,
+			isBornBefore : false,
+			isStudent : false,
 			selectedOption : 'single',
-			resultat : {} , 
+			resultat : {} ,
         };
 
     }
@@ -27,9 +27,9 @@ class Calculator extends Component {
 		var etat = {
 			isAdult : this.state.isAdult  ,
 			isBornBefore : this.state.isBornBefore ,
-			isStudent : this.state.isStudent 
-		}; 
-		let resultat = calculate( this.state.slary , etat , this.state.selectedOption ) ; 
+			isStudent : this.state.isStudent
+		};
+		let resultat = calculate( this.state.slary , etat , this.state.selectedOption ) ;
 		this.setState({ resultat: { ...resultat } });
     }
 
@@ -79,7 +79,7 @@ class Calculator extends Component {
 					<div className="calculator-filter">
 						<div className="">
 							<label>
-						        <input 
+						        <input
 						        	type="checkbox"
 						            checked={this.state.checked}
 						            onChange={this.handleStudentChange.bind(this)}
@@ -100,7 +100,7 @@ class Calculator extends Component {
 						            checked={this.state.checked}
 						            onChange={this.handleBornBeforeChange.bind(this)}
 						        />
-						        <span>Are you a student?</span>
+						        <span>Were you born before 31st December 1961?</span>
 					        </label>
 						</div>
 						<div className="">
@@ -129,7 +129,7 @@ class Calculator extends Component {
 					</div>
                 </div>
                 <div className="calculator-tableaux">
-	                <Tableaux data={ this.state.resultat } /> 
+	                <Tableaux data={ this.state.resultat } />
                 </div>
             </div>
         );
