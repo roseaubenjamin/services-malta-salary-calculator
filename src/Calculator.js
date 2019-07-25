@@ -67,13 +67,17 @@ class Calculator extends Component {
 		});
 	}
 
+	readyValue( html ){
+		return this.state.resultat && this.state.resultat.yearly ? html : '' ; 
+	}
+
     render() {
 
         return (
             <div>
                 <h2>Malts calculator salary</h2>
                 <div>
-					<input name="slary" value={this.state.slary} onChange={this.handleInputChange.bind(this)} />
+					<input type="number" name="slary" value={this.state.slary} onChange={this.handleInputChange.bind(this)} />
                 </div>
                 <div className="calculator-focused">
 					<div className="calculator-filter">
@@ -125,11 +129,11 @@ class Calculator extends Component {
 						</div>
 					</div>
 					<div className="calculator-chart" >
-						<Charts />
+						{this.readyValue( <Charts data={ this.state.resultat } /> )}
 					</div>
                 </div>
                 <div className="calculator-tableaux">
-	                <Tableaux data={ this.state.resultat } />
+                	{this.readyValue( <Tableaux data={ this.state.resultat } /> )}
                 </div>
             </div>
         );
