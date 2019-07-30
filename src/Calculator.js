@@ -56,6 +56,7 @@ class Calculator extends Component {
     }
 
     handleInputChange( event ) {
+    	var result = 100 * Math.ceil(event.target.value / 100);
     	this.setState({slary: event.target.value}, () => {
 		    this.calculate();
 		});
@@ -74,67 +75,78 @@ class Calculator extends Component {
     render() {
 
         return (
-            <div>
-                <h2>Malts calculator salary</h2>
-                <div>
-					<input type="number" name="slary" value={this.state.slary} onChange={this.handleInputChange.bind(this)} />
-                </div>
-                <div className="calculator-focused">
-					<div className="calculator-filter">
-						<div className="">
-							<label>
-						        <input
-						        	type="checkbox"
-						            checked={this.state.checked}
-						            onChange={this.handleStudentChange.bind(this)}
-						        />
-						        <span>Are you a student?</span>
-					        </label>
-					        <label>
-						        <input
-						        	type="checkbox"
-						            checked={this.state.checked}
-						            onChange={this.handleAdultChange.bind(this)}
-						        />
-						        <span>Are you over 18 years old?</span>
-					        </label>
-					        <label>
-						        <input
-						        	type="checkbox"
-						            checked={this.state.checked}
-						            onChange={this.handleBornBeforeChange.bind(this)}
-						        />
-						        <span>Were you born before 31st December 1961?</span>
-					        </label>
-						</div>
-						<div className="">
-							<div className="radio">
-						        <label>
-						            <input onChange={this.handleStatusChange.bind(this)} type="radio" value="single" checked={this.state.selectedOption === 'single'} />
-						            Single
-						        </label>
-					        </div>
-					        <div className="radio">
-						        <label>
-						            <input onChange={this.handleStatusChange.bind(this)} type="radio" value="married" checked={this.state.selectedOption === 'married'} />
-						            Married
-						        </label>
-					        </div>
-					        <div className="radio">
-						        <label>
-						            <input onChange={this.handleStatusChange.bind(this)} type="radio" value="parent" checked={this.state.selectedOption === 'parent'}/>
-						            Parent
-						        </label>
-					        </div>
-						</div>
-					</div>
-					<div className="calculator-chart" >
-						{this.readyValue( <Charts data={ this.state.resultat } /> )}
+            <div className="container-fluid">
+                <div className="row">
+	                <div className="col-12">
+		                <div className="salary-input">
+							<input type="number" name="slary" value={this.state.slary} onChange={this.handleInputChange.bind(this)} />
+		                </div>
 					</div>
                 </div>
-                <div className="calculator-tableaux">
-                	{this.readyValue( <Tableaux data={ this.state.resultat } /> )}
+                <div className="calculator-focused row">
+                	<div className="col-12 col-sm-6">
+						<div className="calculator-filter">
+							<div className="">
+								<label>
+							        <input
+							        	type="checkbox"
+							            checked={this.state.checked}
+							            onChange={this.handleStudentChange.bind(this)}
+							        />
+							        <span>Are you a student?</span>
+						        </label>
+						        <label>
+							        <input
+							        	type="checkbox"
+							            checked={this.state.checked}
+							            onChange={this.handleAdultChange.bind(this)}
+							        />
+							        <span>Are you over 18 years old?</span>
+						        </label>
+						        <label>
+							        <input
+							        	type="checkbox"
+							            checked={this.state.checked}
+							            onChange={this.handleBornBeforeChange.bind(this)}
+							        />
+							        <span>Were you born before 31st December 1961?</span>
+						        </label>
+							</div>
+							<div className="genre-radio">
+								<div className="radio">
+							        <label>
+							            <input onChange={this.handleStatusChange.bind(this)} type="radio" value="single" checked={this.state.selectedOption === 'single'} />
+							            Single
+							        </label>
+						        </div>
+						        <div className="radio">
+							        <label>
+							            <input onChange={this.handleStatusChange.bind(this)} type="radio" value="married" checked={this.state.selectedOption === 'married'} />
+							            Married
+							        </label>
+						        </div>
+						        <div className="radio">
+							        <label>
+							            <input onChange={this.handleStatusChange.bind(this)} type="radio" value="parent" checked={this.state.selectedOption === 'parent'}/>
+							            Parent
+							        </label>
+						        </div>
+							</div>
+						</div>
+				    </div>
+				    <div className="col-12 col-sm-6">
+						<div className="calculator-chart" >
+							{this.readyValue( <Charts data={ this.state.resultat } /> )}
+						</div>
+					</div>
                 </div>
+                <div className="row">
+                	<div className="col-12">
+		                <div className="calculator-tableaux">
+		                	{this.readyValue( <Tableaux data={ this.state.resultat } /> )}
+		                </div>
+                	</div>	
+				</div>
             </div>
         );
     }

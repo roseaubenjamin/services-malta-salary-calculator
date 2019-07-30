@@ -3,7 +3,13 @@
 // wp.element.render(pEl, document.querySelector( '#calculator_content' ) );
 import Calculator from './Calculator';
 
-let $core = document.querySelector( '#calculator_content' ) ;
-if ( $core ) {
-	wp.element.render(<Calculator />, $core );
-}
+let interale = null ; 
+
+interale = setInterval( () => {
+	let $core = document.querySelector( '#calculator_content' ) ;
+	console.log( $core )
+	if ( $core ) {
+		clearInterval( interale ) ; 
+		wp.element.render(<Calculator />, $core );
+	}
+},1000)
