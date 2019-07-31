@@ -11,3 +11,8 @@
 1) Apres avoire cloner ce dossier dans ce meme repertoire lancer la commande : `npm run install`
 2) Apres l'installation, on lance `npm run dev` 
 3) Le dossier a modifier se trouve dans ./src
+
+
+## Utilisation
+1) Crée une page dans wordpress
+1) Dans la page crée, utilise le template de page `Malte calculator` et c'est tout :) 
