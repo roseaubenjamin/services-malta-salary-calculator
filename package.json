@@ -12,7 +12,7 @@
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",
-    "classnames": "^2.2.5",
+    "classnames": "^2.2.6",
     "cross-env": "^5.1.5",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
@@ -27,6 +27,14 @@
   "dependencies": {
     "chart.js": "^2.8.0",
     "chartjs-plugin-annotation": "^0.5.7",
-    "react-chartjs-2": "^2.7.6"
+    "create-react-class": "^15.6.3",
+    "lodash.isundefined": "^3.0.1",
+    "lodash.throttle": "^4.1.1",
+    "react": "^16.8.6",
+    "react-chartjs-2": "^2.7.6",
+    "react-dom": "^16.8.6",
+    "react-draggable": "^3.3.0",
+    "react-range": "^1.2.0",
+    "react-simple-range": "^1.6.0"
   }
 }

@@ -179,6 +179,7 @@ function reactwp_styles() {
 	    time(),
 	    'all'
 	);
+	wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Crimson+Pro|Roboto&display=swap', false ); 
 	wp_enqueue_style('reactwp-bootstrap-css-calculator'); 
 	wp_enqueue_style('reactwp-main-css-calculator-style'); 
 

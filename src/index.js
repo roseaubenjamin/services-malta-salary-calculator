@@ -7,7 +7,6 @@ let interale = null ;
 
 interale = setInterval( () => {
 	let $core = document.querySelector( '#calculator_content' ) ;
-	console.log( $core )
 	if ( $core ) {
 		clearInterval( interale ) ; 
 		wp.element.render(<Calculator />, $core );

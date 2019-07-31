@@ -19,10 +19,10 @@ class Tableaux extends Component {
     		
         return (
             <div>
-                <table class="table table-hover">
+                <table class="table table-hover table-striped">
 				    <tbody>
-				        <tr>
-				            <th></th>
+				        <tr className="header-calculator-table">
+				            <th ></th>
 				            <th class="legend">Weekly</th>
 				            <th class="legend">Monthly</th>
 				            <th class="legend yearly">Yearly</th>
@@ -75,7 +75,7 @@ class Tableaux extends Component {
 				                <div>£<span class="bonus-yearly-result">{yearly.bonus.toFixed(2)}</span></div>
 				            </td>
 				        </tr>
-				        <tr class="income net-salary">
+				        <tr class="income net-salary header-calculator-table with">
 				            <td class="legend">Net Salary</td>
 				            <td class="result">
 				                £<span class="net-weekly-result">{weekly.net.toFixed(2)}</span>

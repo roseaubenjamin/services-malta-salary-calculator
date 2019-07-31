@@ -1,3 +1,180 @@
 .genre-radio{
 	display: flex;
 }
+
+/*
+ * Stylisation du titre
+*/
+.entry-title{
+  font-family: 'Crimson Pro', serif;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  color: #0ebdc5 ; 
+}
+
+.content-desc , * {
+  font-family: 'Roboto', sans-serif;
+}
+
+.site-content{
+	background-color: #f2f2f2 ; 
+}
+
+.salary-input{
+ display: flex;
+} 
+
+.salary-input-content{
+  min-width: 0px;
+}
+
+.salary-input input{
+  border: none !important;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: right;
+  background: none !important;
+  background-color: none !important;
+  font-size: 4.6rem !important;
+  min-width: 0px ; 
+  width: 100%;
+  outline: none;
+}
+
+.salary-input-uniter{
+  flex: 1 ; 
+  text-align: left;
+  line-height: 10rem;
+  font-size: 1.2rem; 
+  min-width: 40% ; 
+}
+
+.salary-input input::-webkit-outer-spin-button,
+.salary-input input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+.ranger-calculator{ 
+  max-width: 600px ; 
+  height: 75px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ranger-calculator div[role="slider"]{
+  border-radius: 50% ; 
+  background-color : #0ebdc5 !important ; 
+  width: 32px !important ;
+  height: 32px !important ;  
+}
+
+
+.container-input {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100% ; 
+}
+
+.container-input input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  display: inline-block;
+  vertical-align: middle;
+  height: 25px;
+  width: 25px;
+  background-color: #fff;
+}
+
+.checkmark + span{
+  margin-left: 1rem;
+}
+
+.container-input:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container-input input:checked ~ .checkmark {
+  background-color: #ff6384;
+  position: relative;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container-input input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container-input .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.separator{
+  width: 100%;
+  border-bottom: 1px solid #dedede;
+  margin-bottom: 4rem;
+}
+
+.checkStatus{
+  margin-top: 3rem;
+  padding-left: 1.5rem;
+}
+
+.checkStatus .btn , .checkStatus *{
+  border-radius: none !important;
+  font-weight: normal !important;
+}
+
+.calculator-chart{
+  padding: 0rem 2rem 2rem 2rem;
+}
+
+/*
+ * Stylisation du table
+*/
+table td, table th{
+  border: none !important;
+}
+
+.table-striped tbody tr{
+  background-color: rgba(255,255,255,.5);
+}
+
+.header-calculator-table{
+  background-color: #0ebdc5 !important;
+}
+
+.with{
+  color: #FFF !important ; 
+}
